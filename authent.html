@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href= \assets\css\sign.css>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box login">
+        <form action="">
+
+
+
+
+<!--*********************************************aandek compte w bech tehel *************************************-->
+
+            <h1 class="btn-shine">login</h1>
+
+            <!--saisir usernom-->
+
+            <div class="input-box">
+                <input type="text" placeholder="username">
+                <i class='bx bxs-user-circle' ></i>
+            </div>
+
+
+                <!--saisie mdps-->
+
+            <div class="input-box">
+                <input type="password" placeholder="password">
+                <i class='bx bxs-lock-alt' id="lock"></i>
+            </div>
+
+
+
+        <!--forget mdps-->
+<br>
+            <div class="forget-link">
+                <a href="#">forget password</a>
+            </div>
+
+            
+            <!--button pour envoyer -->
+
+            <button type="submit" class="btn">login</button>
+
+
+
+
+            <!--enter avec social platform-->
+
+            <p>login with  social platforms</p>
+
+            <div class="social-icons">
+                <a href="#"><i class='facebook bx bxl-facebook-circle' ></i></a>
+                <a href="#"><i class='bx bxl-google'></i></a>
+                <a href="#"><i class='bx bxl-github' ></i></a>
+               
+            </div>
+
+        </form>
+    </div>
+
+<!--*********************************maandekch compte w taw bch t9ayeed************************** -->
+    <div class="form-box register">
+        <form method="post" action="\assets\auth\sign.php" >
+
+
+            <h1 class="btn-shine">registration</h1>
+
+                <!--user-->
+            <div class="input-box">
+                <input type="text" placeholder="username " name="username">
+                <i class='bx bxs-user-circle' ></i>
+            </div>
+
+                <!--email-->
+            <div class="input-box">
+                <input type="email" placeholder="email" name="email">
+                <i class='bx bxs-envelope' ></i>
+            </div>
+
+
+                <!--password-->
+            <div class="input-box">
+                <input type="password" placeholder="password" name="mdps">
+                <i class='bx bxs-lock-alt' id="lock"></i>
+            </div>
+
+             <!--sexe-->
+             <div class="input">
+              <!-- femme -->
+                    <div class="checkbox-container">
+                         <input class="checkbox-input" id="animated-checkbox" type="checkbox" name="sexe"  value="f"/>
+                            <label class="checkbox" for="animated-checkbox">
+                                 <span class="line line1"></span>
+                                 <span class="line line2"></span>
+                             </label> <label for="animated-checkbox">femme</label>
+                    </div>
+<br>
+                <!-- homme -->
+                    <div class="checkbox-container1">
+                        <input class="checkbox-input1" id="animated-checkbox1" type="checkbox"   name="sexe"  value="h"/>
+                           <label class="checkbox1" for="animated-checkbox1">
+                                <span class="linee line3"></span>
+                                <span class="linee line4"></span>
+                            </label><label for="animated-checkbox1">homme</label>
+                   </div>
+     
+            </div>
+
+
+
+
+          
+
+                <!--button pour envoyer -->
+
+
+            <button type="submit" class="btn">register</button>
+
+
+
+                <!--enter avec social platform-->
+
+
+            <p>or register with  social platforms</p>
+
+            <div class="social-icons">
+                <a href="#"><i class=' bx bxl-facebook-circle  facebook' ></i></a>
+                <a href="#"><i class='bx bxl-google'></i></a>
+                <a href="#"><i class='bx bxl-github' ></i></a>
+            </div>
+        </form>
+    </div>
+
+    
+<!-- hdhi mn chira lissar  -->
+    <div class="toggle-box">
+        <div class="toggle-panel toggle-left">
+            <h1>hello, welcome!</h1>
+            <p>Don't have an account?</p>
+            <button class=" btn register-btn">Register</button>
+            
+        </div>
+
+
+
+<!-- hedhi limen  aka zyeda  -->
+        <div class="toggle-panel toggle-right">
+            <h1> welcome back!</h1>
+            <p>Already  have an account?</p>
+            <button class=" btn  login-btn">login</button>
+            
+        </div>
+
+
+
+    </div>
+    
+    </div>
+
+
+    <!-- mdpss -->
+    <div class="reset-container">
+        <div class="form-box reset-password">
+            <form action="">
+                <h1 class="btn-shine">Reset Password</h1>
+                
+                <div class="input-box">
+                    <input type="email" placeholder="Enter your email" id="reset-email">
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                
+                <button type="button" class="btn" id="send-code-btn">Send Code</button>
+                
+                <div class="input-box verification-code" style="display: none;">
+                    <input type="text" placeholder="Verification code">
+                    <i class='bx bxs-key'></i>
+                </div>
+                
+                <div class="input-box new-password" style="display: none;">
+                    <input type="password" placeholder="New password">
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                
+                <button type="button" class="btn verify-btn" style="display: none;">Verify Code</button>
+                <button type="submit" class="btn submit-new-password" style="display: none;">Submit New Password</button>
+                
+                <div class="back-to-login">
+                    <a href="#"><i class='bx bx-arrow-back'></i> Back to login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/assets/js/sign.js"></script>
+</body>
+</html>

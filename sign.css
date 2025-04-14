@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+
+}
+
+
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:linear-gradient(90deg,#fff,#c9d6ff);
+
+}
+
+
+
+
+
+.container{
+    position: relative;
+    width: 850px;
+    height: 550px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow:  0 0 30px rgba(0,0, 0, .2);
+    margin: 20px;
+/* khbet ezyed m rasm  */
+    overflow: hidden;
+}
+
+
+/*back mtaa formulaire*/
+
+.form-box{
+    position :absolute;
+    right: 0;
+    width:50%;
+    height: 100%;
+    background: #fff; 
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-align: center;
+    padding: 40px;
+    z-index: 1;
+    transition: .6s ease-in-out 1.2s, visibility 0s 1s;
+
+}
+
+/*box taa formulaire yet7arek*/
+.container.active .form-box{
+    right: 50%;
+
+}
+
+/*box formulaire taa register*/
+
+
+.form-box.register{
+    visibility: hidden;
+}
+
+
+.container.active .form-box.register{
+    visibility: visible;
+}
+
+
+/*formulaire*/
+form{
+    /*background: red;*/
+    width: 100%;
+}
+
+
+
+
+
+/*titre*/
+.container h1{
+    font-size: 36px;
+    margin: -10px 0;
+}
+
+
+
+/*titre//////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.btn-shine {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 48px;
+    color: #fff;
+    background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: "Poppins", sans-serif;
+  }
+  @-moz-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 180px;
+    }
+    100% {
+      background-position: 180px;
+    }
+  }
+  @-webkit-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 180px;
+    }
+    100% {
+      background-position: 180px;
+    }
+  }
+  @-o-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 180px;
+    }
+    100% {
+      background-position: 180px;
+    }
+  }
+  @keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 180px;
+    }
+    100% {
+      background-position: 180px;
+    }
+  }
+
+
+
+/*//////////////////////////////check box1///////////////////////////////////////////////////////////////*/
+/* Checkbox Container */
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Hidden Checkbox Input */
+  .checkbox-input {
+    display: none;
+  }
+  
+  /* Checkbox Label */
+  .checkbox {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow:
+      inset -4px -4px 8px #ffffff,
+      inset 4px 4px 8px #b0b0b0;
+  }
+  
+  /* X Mark Lines */
+  .line {
+    position: absolute;
+    width: 10px;
+    height: 4px;
+    background: #a0a0a0; /* Disabled color */
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* X Mark Line 1 */
+  .line1 {
+    transform: rotate(45deg);
+  }
+  
+  /* X Mark Line 2 */
+  .line2 {
+    transform: rotate(-45deg);
+  }
+  
+  /* Checked State */
+  .checkbox-input:checked + .checkbox {
+    background: #d4e9d4; /* Light green background */
+  }
+  
+  .checkbox-input:checked + .checkbox .line1 {
+    transform: rotate(50deg) translateX(-3px) translateY(8px) scaleX(0.6);
+    background: #169c1fff;
+  }
+  
+  .checkbox-input:checked + .checkbox .line2 {
+    transform: rotate(-50deg) translateX(6px) translateY(3px); /* Second line in tick's opposite direction */
+    background: #169c1fff;
+  }
+  
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Checkbox Container */
+.checkbox-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Hidden Checkbox Input */
+  .checkbox-input1 {
+    display: none;
+  }
+  
+  /* Checkbox Label */
+  .checkbox1 {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow:
+      inset -4px -4px 8px #ffffff,
+      inset 4px 4px 8px #b0b0b0;
+  }
+  
+  /* X Mark Lines */
+  .linee {
+    position: absolute;
+    width: 10px;
+    height: 4px;
+    background: #a0a0a0; /* Disabled color */
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* X Mark Line 1 */
+  .line3 {
+    transform: rotate(45deg);
+  }
+  
+  /* X Mark Line 2 */
+  .line4 {
+    transform: rotate(-45deg);
+  }
+  
+  /* Checked State */
+  .checkbox-input1:checked + .checkbox1 {
+    background: #d4e9d4; /* Light green background */
+  }
+  
+  .checkbox-input1:checked + .checkbox1 .line3 {
+    transform: rotate(50deg) translateX(-3px) translateY(8px) scaleX(0.6);
+    background: #169c1fff;
+  }
+  
+  .checkbox-input1:checked + .checkbox1 .line4 {
+    transform: rotate(-50deg) translateX(6px) translateY(3px); /* Second line in tick's opposite direction */
+    background: #169c1fff;
+  }
+  
+
+/* ///////////////////inputttttt///////////////////////////////////////////////////////////////// */
+
+
+.input-box{
+    position:relative;
+    margin: 20px 0;
+}
+
+
+
+.input-box input{
+    width:100%;
+    padding:13px 50px 13px 20px;
+    background: #eee;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color:#333;
+    font-weight: 500;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+
+}
+
+
+
+
+  .input-box input:focus {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+               -13px -13px 100px #ffffff;
+  }
+
+
+
+
+
+
+
+
+
+
+
+.input-box i {
+    position:absolute;
+    right: 20px;
+    top: 50%;
+    transform :translateY(-50%);
+    font-size: 20px;
+    color:#888
+
+}
+
+.forget-link{
+    margin: -15px 0px 15px ;
+}
+
+.forget-link a {
+    font-size: 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+
+
+/*button login///////////////////////////////////////////////////////////////////////////////*/
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    background: transparent;
+    transition: ease-out 0.5s;
+    border: 2px solid;
+    border-radius: 10em;
+    box-shadow: inset 0 0 0 0 #71BBB2;
+    margin: 20px 0 10px 0;
+    color: rgb(26, 2, 2);
+    font-size: 15px;
+    font-weight: 500;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #497D74;
+  }
+  
+  .button-submit:active {
+    transform: scale(0.9);
+  }
+  
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/*message login with paltform*/
+
+
+.container p {
+    font-size: 15px;
+    margin: 15px 0;;
+}
+/*------------------------ICONS----------------------------------*/
+
+/* ken mnhbch icons ijiw t7et baadhhoum k nsagher */
+.social-icons{
+    display: flex;
+    justify-content: center;
+}
+
+/*icons*/
+
+.social-icons a {
+    display: inline-flex;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    font-size: 24px;
+    color :#333;
+    text-decoration: none;
+    margin :0 8px;
+    
+}
+
+.social-icons a:hover {
+    background: linear-gradient(45deg, #497D74, #497D74, #27445D);
+    font-size: 30px;
+    color :#fcf9f9;
+    transition:0.5s ease-in-out ;
+  }
+  
+/* --------------------------zone blue---------------------------------- */
+
+.toggle-box {
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+}
+
+
+.toggle-box::before{
+    content: '';
+    position: absolute;
+    left: -250%;
+    width: 300%;
+    height: 100%;
+    background: #27445d;
+
+    /* border: 2px solid rebeccapurple; */
+    border-radius:150px ;
+    z-index: 2;
+    transition:1.8s ease-in-out ;
+}
+
+
+/* hedi partie tzedt baaed js baaed fazet tbdil esm */
+/* pos zar9a tet9leb w tghati aal login z tdhaher welcom back /k ytbdl esm clss k nnezel aal register css tbdel l hedhi adheka nkhedem bl class */
+.container.active .toggle-box::before{
+    left: 50%;
+}
+/* l7ad houni */
+
+.toggle-panel{
+    
+    position:absolute;
+    width: 50%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;/* postion mttaa partie hedhi */
+    transition: .6s ease-in-out;
+}
+
+/*w houni baaed js*/
+.toggle-panel.toggle-left {
+    left: 0;  
+    transition-delay: 1.2s;
+}
+.container.active .toggle-panel.toggle-left{
+    left: -50%;
+    transition-delay: .6s;
+}
+
+/*lhouni*/
+
+
+
+.toggle-panel.toggle-right{
+    right: -50%;
+    transition-delay: .6s;
+}
+
+/*baaed js*/
+.container.active .toggle-panel.toggle-right{
+    right: 0;
+    transition-delay: 1.2;
+}
+/*lhouni*/
+
+.toggle-panel p{
+    margin-bottom: 20px;
+}
+
+
+.toggle-panel .btn{
+    width: 160px;
+    height: 46px;
+    background: transparent;
+    border: 2px  solid #fff;
+    box-shadow: none;
+
+
+}
+
+
+/* k nsaghrou window chissir */
+@media screen and (max-width: 650px){
+    .container{
+        /*nohkem f taille taa page*/
+        height: calc(70vh);
+    }
+    .form-box{
+        /* background: #741f1f; */
+        bottom: 0;
+        width: 100%;
+        height: 70%;
+    }
+
+.container.active .form-box{
+    right: 0;
+    bottom: 25%;
+}
+
+    .toggle-box::before{
+        left: 0;
+        top: -270%;
+        width: 100%;
+        height: 300%;
+    }
+
+    .container.active .toggle-box::before{
+        left: 0;
+        top: 70%;
+
+    }
+
+/*hedhi zone blue */
+    .toggle-panel{
+        border: 2px solid red;
+        width: 100%;
+        height: 30%;
+    }
+
+
+
+
+
+    .toggle-panel.toggle-left{
+        top: 0;
+    }
+
+
+
+    .container.active .toggle-panel.toggle-left{
+        left: 0;
+        top: -30%;
+    }
+    .toggle-panel.toggle-right{
+        right: 0;
+        bottom: -30%;
+    }
+
+
+    .container.active .toggle-panel.toggle-right{
+        bottom: 0%;
+    }
+    
+}
+
+
+
+/* ********************************* Fenêtre Forget Password ********************************* */
+/* Conteneur principal pour le centrage */
+.reset-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  z-index: 1000;
+  display: none;
+}
+
+.reset-container.active {
+  display: flex;
+}
+
+/* Fenêtre de réinitialisation */
+.reset-password {
+  width: 350px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.reset-container.active .reset-password {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Ajustements pour le contenu */
+.reset-password h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.reset-password .input-box {
+  margin: 15px 0;
+}
+
+.reset-password .btn {
+  width: 100%;
+  margin: 10px 0;
+}
