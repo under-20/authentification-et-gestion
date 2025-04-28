@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/assets/css/admindash1.css">
+</head>
+<body>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        :root{
+            --light:#f6f6f9;
+            --primary:#497D74;
+            --light-primary:#CFE8FF;
+            --gray:#eee;
+            --dark-grey:#AAAAAA;
+            --dark:#363949;
+            --danger:#D32F2F;
+            --light-danger:#FECDD3;
+            --warning:#FBC02D;
+            --light-warning:#FFF2C6;
+            --success:#71BBB2;
+            --light-success:#88F7D0;
+        }
+        
+        
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+        }
+        
+        .bx{
+            font-size: 1.9rem;
+        }
+        
+        a{
+            text-decoration: none;
+        }
+        
+        li{
+            list-style: none;
+            margin: 20px;
+        }
+        
+        html{
+            overflow-x: hidden;
+        }
+        
+        
+        
+        body.dark{
+            --light:#1e1e1e;
+            --grey:#121212;
+            --dark:#fbfbfb;
+        }
+        
+        body{
+            background: var(--gray);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            display: flex;
+            width: 100%;
+        }
+        
+        .side{
+            top: 0;
+            left: 0;
+            background:var(--light);
+            width: 250px;
+            height: 100%;
+            z-index: 2000;
+            overflow-x: hidden;
+            scrollbar-width: none;
+            transition: all 0.3s ease;
+        }
+        
+        .side .logo{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            height: 102px;
+            display: flex;
+            align-items: center;
+            z-index: 500;
+            padding-bottom: 10px;
+            box-sizing: content-box;
+        }
+        
+        
+        .side .logo img {
+            width: 200px;
+            height: auto; /* conserve les proportions */
+            top: -10px;
+        }
+        
+        .side .title{
+            color: var(--primary);
+        }
+        
+        .side .title:hover{
+        
+            font-size: 25px;
+            color: var(--primary);
+            transition: 1s;
+        }
+        
+        .side > ul:first-of-type li{
+            margin-bottom: 42px;
+            pointer-events: none;
+        
+        }
+        
+        
+        .side ul {
+            width: 100%;
+            margin-top: 40px;
+        }
+        
+        .side ul li{
+            height: 40px;
+            width: 100%;
+            background: transparent;
+            margin-left: 6px;
+            border-radius: 48px 0 0 48px;
+            padding: 4px;
+        }
+        
+        .side ul li:hover{
+            background:var(--gray);
+            position: relative;
+            transition: 1s;
+        
+        }
+        
+        .side ul li.active{
+            background: var(--gray);
+            position: relative ;
+        }
+        
+        
+        .side ul li.active::before{
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            top: -50px; 
+            right: 5px;
+            box-shadow: 35px 35px 0 10px var(--grey);
+            z-index: -1;
+            transition: all 0.3s ease; 
+        }
+         
+        
+        .side ul li.active::after{
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            bottom: -50px; 
+            right: 5px;
+            box-shadow: 35px -35px 0 10px var(--grey);
+            z-index: -1;
+            
+        }
+        
+        
+        .side ul li a {
+            width: 100%;
+            height: 100%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            border-radius: 48px;
+            font-size: 16px;
+            color: var(--dark);
+            white-space: nowrap;
+            overflow-x: hidden;
+            transition: all 0.3s ease; 
+        
+        }
+        
+        
+        .side ul li.active a{
+             color: var(--success);
+        }
+        
+        /* .close {
+            width: calc(48px - (4px * 2));
+            transition: all 0.4s ease;
+        }
+        
+        
+        .side ul li a.bx{
+            min-width: calc(60px - ((4px + 6px)*2));
+            display: flex;
+            font-size: 1.6rem;
+            justify-content: center;
+        } */
+        
+        
+        .side ul li a .logout {
+            color: var(--danger);
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /* ----- content  wstou navvv ----------------------------------------------------*/
+        
+        
+        
+        /* .content {
+            flex: 1;
+            padding: 20px;
+            background: #f5f5f5;
+            min-height: 100vh;
+        } */
+        
+        
+        
+        .content{
+            position: relative;
+            width: calc(100% - 50px);
+            left: 0;
+            transition: all 0.3s ease;
+            
+        }
+         
+        
+         .content nav {
+            height: auto; 
+         /*    width: 100%; */
+            background: var(--light);
+            min-height: 60px; 
+            padding: 0 25px 0 0; 
+            display: flex;
+            align-items: center; 
+            grid-gap: 24px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        
+        
+        
+        .content nav::before{
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            bottom: -40px;
+            left: 0;
+            border-radius: 50%;
+            box-shadow: -20px -20px 0 var(--light);
+        }
+        
+        
+        .content nav a{
+            color: var(--dark);
+        }
+        
+        .content nav .bx.bx-menu{
+            cursor: pointer ;
+            color: var(--dark);
+        }
+        
+        
+        
+        .content nav form{
+            max-width: 400px;
+            width: 100%;
+            margin-right: auto;
+        
+        }
+        
+        
+        .content nav form .form-input{
+            display: flex;
+            align-items: center;
+            height: 36px;
+        }
+        
+        .content nav form .form-input input{
+            flex-grow: 1;
+             padding: 0 16px;
+             height: 100%;
+             border: none;
+             background: var(--gray);
+             border-radius: 36px 0 0 36px;
+             outline: none;
+             width: 100%;
+             color: var(--dark);
+        }
+        
+        
+        .content nav form .form-input input:focus {
+            color: #27445d;
+            outline-color: rgba(40, 21, 168, 0.716);
+            box-shadow: -3px -3px 15px rgba(40, 21, 168, 0.716);
+            transition: .1s;
+            transition-property: box-shadow;
+          }
+        
+          .content nav form .form-input button{
+            color: white; 
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            border-radius: 50%;
+            background: var(--gradient-2, linear-gradient(90deg, #27445d 0%, #190781 100%));
+            border: 0;
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+          
+          }
+        
+        
+          /*hover effect*/
+          .content nav form .form-input button:hover {
+            color: #fff;
+            background-color: #1A1A1A;
+            box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+            transform: translateY(-3px);
+          }
+          /*button pressing effect*/
+          .content nav form .form-input button:active {
+            box-shadow: none;
+            transform: translateY(0);
+          }
+        
+        
+        
+          .content nav .notif{
+            font-size: 20px;
+            position: relative;
+          }
+        
+          .content nav .notif .count{
+            position :absolute;
+            font-size: 12px;
+            top: -6px;
+            right: -6px;
+            width: 20px;
+            height: 20px;
+            background: var(--danger);
+            border-radius: 50%;
+            color: var(--light);
+            border: 2px solid var(--light);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+          }
+        
+        
+          .content nav .profile img{
+            width: 36px;
+            height: 36px;
+            object-fit: cover;
+            border-radius: 50%;
+        
+          }
+        
+        
+          .content nav .theme-toggle{
+            display: block;
+            min-width: 50px;
+            height: 25px;
+            background-color: var(--gray);
+            cursor: pointer;
+            position:relative;
+            border-radius: 25px;
+          }
+        
+        
+        
+        
+          .content nav .theme-toggle::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: calc(25px - 4px); /* Correction: espace manquant après le moins */
+            height: calc(100% - 4px); /* Utilisation de height au lieu de bottom */
+            background: #27445d;
+            border-radius: 50%; /* Optionnel pour un effet rond */
+            transition: all 0.3s ease;
+        }
+        
+        
+        .content nav #theme-toggle:checked + .theme-toggle::before {
+            left: calc(100% - (25px - 4px) - 2px);
+        }
+        
+        
+        /* ---------- taaa menu sghira l f tswirtyyyy------------- */
+        
+        /* Content Frame */
+        .header {
+            flex: 1;
+            padding: 20px;
+            background: #fff;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header iframe {
+            width: 100%;
+            height: 100%;
+            min-height: calc(100vh - 150px);
+            border: none;
+        }
+        
+        /* Conteneur du menu déroulant */
+        .profile-dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 15px;
+        }
+        
+        /* Style de l'image de profil */
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid #2a2185;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .profile img:hover {
+            transform: scale(1.05);
+            border-color: #4d3ce6;
+        }
+        
+        /* Contenu du menu déroulant (caché par défaut) */
+        .profile-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            z-index: 1000;
+            overflow: hidden;
+            animation: fadeIn 0.6s ease;
+        }
+        
+        /* Options du menu */
+        .profile-dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .profile-dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        
+        .profile-dropdown-content a:hover {
+            background-color: #2a2185;
+            color: white;
+        }
+        
+        .profile-dropdown-content a i {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        
+        /* Afficher le menu déroulant au survol */
+        .profile-dropdown:hover .profile-dropdown-content {
+            display: block;
+        }
+        
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* --------------------------------------------------------------------------------- */
+        
+        
+        
+        
+        </style>
+    <!-- nav -->
+     <div class="container">
+        <div class="side ">
+            <ul class="logo">
+                   <img src="resource/logo.jpg" alt="" srcset="">
+                </a>
+            </ul>
+
+
+                    <!-- //MAIN/// -->
+
+            <li style="font-size: 33px;  color: #27445D;">Main</li>
+             
+
+            <ul>
+                <li class="active" ><a href="#" class="nav-link" data-src="dashboard.html">
+                    <span class="icon  ">
+                        <i class='bx bx-home-smile'></i>
+                    </span>
+                    <span class="title">Dashboard</span>
+                </a></li>
+            </ul>
+
+
+
+
+
+ 
+                    <!-- ///APPS// -->
+                    <ul>
+                        <li class="">
+                            <a href="#" class="nav-link" onclick="loadContent('../../view/backoffice/affiche.php')">
+                                <span class="icon">
+                                    <i class='bx bxs-group'></i>
+                                </span>
+                                <span class="title">Profile client</span>
+                            </a>
+                        </li>
+                    </ul>
+                      
+
+
+          
+
+
+                  <!-- ---------------------------------------------------------- -->
+                      <ul>  
+                        <li>
+                            <a href="data.html" onclick="loadContent('../../view/backoffice/dataprofile.html'); return false;">
+                                <span class="icon">
+                                    <i class='bx bxs-data'></i>
+                                </span>
+                                <span class="title">Donnee client </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- ----------------------------------------- -->
+
+  
+
+
+
+            
+      
+            <ul>
+                    <li><a href="">
+                    <span class="icon">
+                        <i class='bx bx-message-square-dots'></i>
+                    </span>
+                    <span class="title">Email</span>
+                </a></li>
+            </ul>
+            <ul>
+                <li><a href="">
+                    <span class="icon">
+                        <i class='bx bxs-calendar-event' ></i>
+                    </span>
+                    <span class="title"> Event</span>
+                </a></li>
+            </ul>
+
+            <ul>
+                <li><a href="" onclick="loadContent('../../view/backoffice/chart.php'); return false;">
+                    <span class="icon">
+                        <i class='bx bx-line-chart'></i>
+                    </span>
+                    <span class="title">Chart</span>
+                </a></li>
+            </ul>
+
+            <ul>
+                <li><a href="">
+                    <span class="icon">
+                        <i class='bx bx-border-all'></i>
+                    </span>
+                    <span class="title">Widget</span>
+                </a></li>
+            </ul>
+
+            <ul>
+                <li><a href="">
+                    <span class="icon">
+                        <i class='bx bxs-cog'></i>
+                    </span>
+                    <span class="title">Settings</span>
+                </a></li>
+            </ul>
+              <!-- ///FEATURES// -->
+            <li  style="font-size: 30px;   color: #27445D; ">Features</li>
+           
+            <ul>
+                <li><a href="">
+                    <span class="icon">
+                        <i class='bx bx-list-check'></i>
+                    </span>
+                    <span class="title">To Do List</span>
+                </a></li>
+            </ul>
+            <ul>
+                <li><a href="">
+                    <span class="icon">
+                        <i class='bx bxs-star-half'></i>
+                    </span>
+                    <span class="title">Bar Rating</span>
+                </a></li>
+            </ul> 
+            <ul>
+                <li><a href="">
+                    <span class="icon">
+                        <i class='bx bx-help-circle'></i>
+                    </span>
+                    <span class="title">Help</span>
+                </a></li>
+            </ul>
+            <ul>
+                <li><a href="">
+                    <span class="icon">
+                        <i class='bx bx-log-out'></i>
+                    </span>
+                    <span class="title logout">Logout</span>
+                </a></li>
+            </ul>
+        </div> 
+<!-- end offf side bar -->
+        
+
+<!-- main content -->
+
+
+
+
+     <div class="content"> 
+        <!-- Barre de recherch -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Rechercher...">
+                    <button class="search-btn" type="submit">
+                        <i class='bx bx-search-alt'></i>
+                    </button>
+                </div>
+            </form>
+            <input type="checkbox" name="" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle">
+                <!-- notifiication -->
+              
+            </label>
+            <a href="#" class="notif">
+                <i class='bx bxs-bell'></i>
+                <span class="count">12</span>
+            </a>
+
+
+            <!-- profil down -->
+
+
+            <div class="profile-dropdown">
+                <div class="profile">
+                    <img src="resource/isslem.jpg" alt="Photo de profil">
+                </div>
+                <div class="profile-dropdown-content">
+                    <a href="#" >
+                    <i class='bx bx-user'></i> Profil </a>
+        
+                    <a href="#" onclick="loadContent('../../view/backoffice/updateadmin.php')">
+                        <i class='bx bx-cog'> </i> Paramètres</a>
+
+                    <a href="#" ><i class='bx bx-align-right' ></i> consulter admin </a>
+                    <a href="#"><i class='bx bx-log-out'></i> Déconnexion</a>
+                </div>
+            </div>
+        </nav>
+     <!--wfaaaaa navbar -->
+
+
+     <div class="header"> 
+        <iframe id="contentFrame" src="" width="100%" height="600px" style="border:none;"></iframe>
+    </div>
+    
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- java script -->
+<script src="../../assets/js/admindash.js"></script>
+
+</body>
+</html>

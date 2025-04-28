@@ -1,0 +1,172 @@
+/* Définition des couleurs selon la palette fournie */
+:root {
+    --primary: #27445D;
+    --secondary: #497D74;
+    --accent: #71BBB2;
+    --light: #EFE9D5;
+    --white: #FBFBFB;
+    --gray: #e0e0e0;
+    --dark-gray: #aaaaaa;
+}
+
+/* Style global de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light);
+    color: var(--primary);
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-top: 20px;
+}
+
+/* Table de données */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid var(--gray);
+}
+
+th {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+td {
+    background-color: var(--light);
+}
+
+td img {
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+}
+
+tr:hover {
+    background-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Bouton de suppression */
+a {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--secondary);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: var(--primary);
+    cursor: pointer;
+}
+
+a:active {
+    background-color: var(--accent);
+}
+
+/* Confirmation de suppression */
+a:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px var(--primary);
+}
+
+/* Formulaire de recherche */
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.search-input {
+    padding: 10px 15px;
+    width: 300px;
+    border: 2px solid var(--accent);
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+    background-color: var(--white);
+    color: var(--primary);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: var(--secondary);
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: var(--secondary);
+    color: var(--white);
+    border: 2px solid var(--secondary);
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: var(--primary);
+}
+
+.search-button:active {
+    background-color: var(--accent);
+}
+
+/* Options de tri (radio buttons) */
+.sort-options {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.sort-form {
+    display: inline-block;
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sort-form label {
+    font-size: 16px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.sort-form input[type="radio"] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.sort-form label:hover {
+    color: var(--accent);
+}
+
+.sort-form input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.sort-form input[type="radio"]:focus {
+    outline: none;
+}
+
+/* Style pour l'input de recherche pendant le focus */
+.search-input:focus {
+    border-color: var(--secondary);
+}
